@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIIT College Management</title>
+    <link rel="stylesheet" href="College.css" />
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="logo1.png" alt="College Logo" />
+            <div class="brand-text">
+                <h2>GIIT College</h2>
+                <small>Excellence in Education</small>
+            </div>
+        </div>
+        <div class="left-side-user">
+            Welcome, <span id="candidateName">Guest</span>
+        </div>
+        <nav>
+            <a href="College.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#departments">Departments</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="contact.html">Contact</a>
+            <a href="admission.html" class="cta">Admission Form</a>
+            <a href="library.html" class="cta">Library</a>
+            <a href="index.html" class="nav-btn login-btn">Login</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to College Management</h1>
+        <p>A modern learning community offering undergraduate and postgraduate programs across engineering, sciences, arts, and management.</p>
+    </section>
+
+    <section class="image-slider">
+        <div class="slider-wrapper">
+            <div class="slide"><img src="college.png" alt="College" /></div>
+            <div class="slide"><img src="clg.jpeg" alt="Course" /></div>
+            <div class="slide"><img src="b.tech.png" alt="b.tech" /></div>
+            <div class="slide"><img src="ai.png" alt="ai" /></div>
+            <div class="slide"><img src="blood.png" alt="blood" /></div>
+            <div class="slide"><img src="global.png" alt="global" /></div>
+        </div>
+    </section>
+
+    <section class="latest-news" id="news">
+        <h2>📢 Latest News</h2>
+        <div class="news-scroll">
+            <a href="placement.html">Placement Notice – GIIT (11/08/2025)</a>
+            <a href="certification.html">Certification Notice – GIIT (23/08/2025)</a>
+            <a href="selected.html">Congratulations Selected Candidates – GIIT (24/06/2025)</a>
+            <a href="academics.html">Academics Notice – GIIT (18/08/2025)</a>
+        </div>
+    </section>
+
+    <section id="departments" class="departments">
+        <h2>Our Departments</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Computer Science</h3>
+                <ul>
+                    <li><a href="bca.html">BCA — Bachelor of Computer Applications</a></li>
+                    <li><a href="mca.html">MCA — Master of Computer Applications</a></li>
+                    <li><a href="btech_syllabus.html">B.Tech — Computer Science</a></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Mechanical Engineering</h3>
+                <ul>
+                    <li><a href="btech_syllabus.html">B.Tech — Mechanical</a></li>
+                    <li><a href="diploma_mech.html">Diploma — Mechanical</a></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Electronics & Communication</h3>
+                <ul>
+                    <li><a href="btech_syllabus.html">B.Tech — ECE</a></li>
+                    <li><a href="mtech_ece.html">M.Tech — ECE</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="faculty" class="faculty">
+        <h2>Meet Our Expert Faculty</h2>
+        <div class="faculty-grid">
+            <div class="faculty-card">
+                <img src="sajay.sir.png" alt="Faculty 1" />
+                <h3>Dr. Sanjay Mishra</h3>
+                <p>Head of Computer Science</p>
+            </div>
+            <div class="faculty-card">
+                <img src="mokesh.sir.png" alt="Faculty 2" />
+                <h3>Mr. Mukesh</h3>
+                <p>Head of Mechanical Engineering</p>
+            </div>
+            <div class="faculty-card">
+                <img src="rajesh.sir.png" alt="Faculty 3" />
+                <h3>Mr. Rajesh</h3>
+                <p>Head of Electronics & Communication</p>
+            </div>
+            <div class="faculty-card">
+                <img src="prashant.png" alt="Faculty 4" />
+                <h3>Mr. Prashant</h3>
+                <p>Head of Civil Engineering</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nameSpan = document.getElementById('candidateName');
+            const candidateName = localStorage.getItem('candidateName');
+            nameSpan.textContent = candidateName ? candidateName : 'Guest';
+        });
+    </script>
+</body>
+</html>

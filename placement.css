@@ -1,0 +1,179 @@
+/* ===== Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f5f8fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(135deg, #0078d7, #00b4d8);
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+  width: 70px;
+  vertical-align: middle;
+}
+
+/* ===== Overview Section ===== */
+.overview {
+  text-align: center;
+  padding: 2rem;
+}
+
+.overview h2 {
+  color: #0078d7;
+  margin-bottom: 1rem;
+}
+
+.overview p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  width: 180px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #0078d7;
+  font-size: 1.8rem;
+}
+
+/* ===== Recruiters Section ===== */
+.recruiters {
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.recruiters h2 {
+  color: #0078d7;
+  margin-bottom: 1rem;
+}
+
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.logo-grid img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.logo-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Success Stories ===== */
+.success {
+  background: #e8f4ff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.success h2 {
+  color: #0078d7;
+  margin-bottom: 1rem;
+}
+
+.students {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.student-card {
+  background: #fff;
+  width: 250px;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+}
+
+.student-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.student-card h3 {
+  margin-top: 0.5rem;
+  color: #0078d7;
+}
+
+/* ===== Contact Section ===== */
+.contact {
+  background: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.contact h2 {
+  color: #0078d7;
+  margin-bottom: 1rem;
+}
+
+.contact .btn {
+  display: inline-block;
+  background: #0078d7;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.contact .btn:hover {
+  background: #005fa3;
+  transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #0078d7;
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}

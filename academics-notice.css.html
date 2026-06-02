@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics Notice – GIIT College</title>
+  <link rel="stylesheet" href="academics-notice.css">
+</head>
+<body>
+  <div class="notice-container">
+    <header>
+      <img src="logo1.png" alt="GIIT Logo" class="logo">
+      <h1>GIIT College</h1>
+      <p class="notice-date">Date: 23-08-2025</p>
+    </header>
+
+    <section class="notice-content">
+      <h2>Academics Notice</h2>
+      <p>
+        This is to inform all students that the academic schedule for the upcoming semester 
+        has been released. Students are required to check their respective departments for 
+        class timings, course allocations, and examination schedules.
+      </p>
+
+      <p>
+        All students must complete the required assignments, projects, and course registration 
+        before the deadlines specified by the department heads. Failure to comply may result 
+        in delays in academic progress.
+      </p>
+
+      <p>
+        For further information or assistance, please contact the Academic Cell at 
+        <strong>academics@giitcollege.edu.in</strong> or phone <strong>+91 98765 43211</strong>.
+      </p>
+
+      <p class="signature">Registrar, GIIT College</p>
+    </section>
+
+    <!-- Leave a Reply Section -->
+    <section class="leave-reply">
+      <h2>Leave a Reply</h2>
+      <form id="commentForm">
+        <div class="form-group">
+          <label for="commentName">Name *</label>
+          <input type="text" id="commentName" name="commentName" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="commentEmail">Email *</label>
+          <input type="email" id="commentEmail" name="commentEmail" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="commentWebsite">Website</label>
+          <input type="url" id="commentWebsite" name="commentWebsite" placeholder="Your website (optional)">
+        </div>
+
+        <div class="form-group">
+          <label for="commentText">Comment *</label>
+          <textarea id="commentText" name="commentText" placeholder="Your comment here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-post">Post Comment</button>
+        <p id="commentSuccess" class="success-msg"></p>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 GIIT College | All Rights Reserved</p>
+    </footer>
+  </div>
+
+  <script>
+    const commentForm = document.getElementById('commentForm');
+    const commentSuccess = document.getElementById('commentSuccess');
+
+    commentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('commentName').value;
+      const email = document.getElementById('commentEmail').value;
+      const website = document.getElementById('commentWebsite').value;
+      const comment = document.getElementById('commentText').value;
+
+      console.log({ name, email, website, comment });
+
+      commentSuccess.textContent = "✅ Your comment has been posted!";
+      commentForm.reset();
+    });
+  </script>
+</body>
+</html>

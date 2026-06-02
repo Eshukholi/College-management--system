@@ -1,0 +1,133 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: #f4f8ff;
+  color: #333;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg,#2c3e50,#3498db);
+  color: white;
+}
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+header .brand img {
+  width: 50px;
+  height: 50px;
+}
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: 500;
+}
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Enquiry Section */
+.enquire-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Left Contact Info */
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  background: #eef4ff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.contact-info h2 {
+  color: #3498db;
+  margin-bottom: 15px;
+}
+.contact-info p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Right Enquiry Form */
+.enquire-form {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.enquire-form h2 {
+  color: #3498db;
+  margin-bottom: 20px;
+}
+.enquire-form input,
+.enquire-form select,
+.enquire-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.enquire-form button.btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.enquire-form button.btn:hover {
+  background: #2c7edb;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 30px;
+}
+/* Admission Enquiry Section */
+.elementor-element-774f647 {
+    background-color: #3498db; /* Set your background color */
+    padding: 60px 20px;        /* Adjust spacing */
+    position: relative;
+    text-align: center;
+}
+
+.elementor-element-774f647 .elementor-background-overlay {
+    background: rgba(0, 0, 0, 0.3); /* optional overlay */
+}
+
+.elementor-element-774f647 
+h2.elementor-heading-title {
+    color: white;         /* Heading text color */
+    font-size: 2.5rem;    /* Heading size */
+    font-weight: 600;
+    margin: 0;
+}

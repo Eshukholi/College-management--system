@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password - GIIT College</title>
+  <link rel="stylesheet" href="forgot.css">
+  <style>
+    .otp-section {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"]:focus, input[type="number"]:focus {
+      border-color: #0078d7;
+      box-shadow: 0 0 4px rgba(0, 120, 215, 0.4);
+    }
+
+    .btn-reset {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="forgot-container">
+    <img src="logo1.png" alt="GIIT College Logo">
+    <h2>Forgot Password?</h2>
+    <p>Enter your registered mobile number to receive an OTP.</p>
+
+    <form id="forgotForm">
+      <input type="text" id="phone" placeholder="Enter your registered phone number" pattern="[0-9]{10}" required>
+
+      <div class="robot-check">
+        <input type="checkbox" id="notRobot" required>
+        <label for="notRobot">I'm not a robot</label>
+      </div>
+
+      <button type="button" class="btn-reset" id="sendOtpBtn">Send OTP</button>
+
+      <!-- OTP Section -->
+      <div class="otp-section" id="otpSection">
+        <p>Enter the 6-digit OTP sent to your phone.</p>
+        <input type="number" id="otpInput" placeholder="Enter OTP" required>
+        <button type="button" class="btn-reset" id="verifyOtpBtn">Verify OTP</button>
+      </div>
+
+      <p id="message" class="success-msg"></p>
+    </form>
+
+    <a href="login.html" class="back-link">🔙 Back to Login</a>
+  </div>
+
+  <script>
+    const sendOtpBtn = document.getElementById("sendOtpBtn");
+    const verifyOtpBtn = document.getElementById("verifyOtpBtn");
+    const otpSection = document.getElementById("otpSection");
+    const message = document.getElementById("message");
+
+    let generatedOtp = null;
+
+    // Step 1: Generate OTP
+    sendOtpBtn.addEventListener("click", function () {
+      const phone = document.getElementById("phone").value.trim();
+
+      if (phone.length !== 10) {
+        message.textContent = "⚠️ Please enter a valid 10-digit phone number!";
+        message.className = "error-msg";
+        return;
+      }
+
+      const robotCheck = document.getElementById("notRobot").checked;
+      if (!robotCheck) {
+        message.textContent = "⚠️ Please verify that you are not a robot.";
+        message.className = "error-msg";
+        return;
+      }
+
+      // Simulate sending OTP
+      generatedOtp = Math.floor(100000 + Math.random() * 900000);
+      console.log("Simulated OTP:", generatedOtp); // For demo purpose
+
+      message.textContent = `📱 OTP sent to +91-${phone}. (Demo OTP: ${generatedOtp})`;
+      message.className = "success-msg";
+
+      otpSection.style.display = "block";
+      sendOtpBtn.disabled = true;
+      sendOtpBtn.textContent = "OTP Sent ✅";
+    });
+
+    // Step 2: Verify OTP
+    verifyOtpBtn.addEventListener("click", function () {
+      const enteredOtp = document.getElementById("otpInput").value.trim();
+
+      if (enteredOtp === generatedOtp.toString()) {
+        message.textContent = "✅ OTP Verified! You can now reset your password.";
+        message.className = "success-msg";
+
+        setTimeout(() => {
+          window.location.href = "resetpassword.html"; // Redirect to reset page
+        }, 1500);
+      } else {
+        message.textContent = "❌ Incorrect OTP. Please try again.";
+        message.className = "error-msg";
+      }
+    });
+  </script>
+  <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_FIREBASE_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Send OTP
+  function sendRealOTP() {
+    const phoneNumber = "+91" + document.getElementById("phone").value;
+    const appVerifier = new firebase.auth.RecaptchaVerifier("sendOtpBtn", { size: "invisible" });
+
+    auth.signInWithPhoneNumber(phoneNumber, appVerifier)
+      .then(confirmationResult => {
+        window.confirmationResult = confirmationResult;
+        alert("OTP sent to " + phoneNumber);
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Failed to send OTP: " + error.message);
+      });
+  }
+
+  // Verify OTP
+  function verifyRealOTP() {
+    const code = document.getElementById("otpInput").value;
+    confirmationResult.confirm(code)
+      .then(result => {
+        alert("✅ OTP verified! You can reset your password.");
+        window.location.href = "resetpassword.html";
+      })
+      .catch(error => {
+        alert("❌ Invalid OTP: " + error.message);
+      });
+  }
+</script>
+
+</body>
+</html>

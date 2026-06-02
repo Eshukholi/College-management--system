@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="regi.css">
+</head>
+<body>
+  <div class="container">
+    <img src="logo1.png" alt="GIIT Logo" class="logo">
+    <h2>Global Institute of Information Technology</h2>
+
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Enter full name" required>
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="example@email.com" required>
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="10 digits only" maxlength="10" required>
+        <div class="error" id="phoneError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Create password" minlength="6" required>
+          <i class="bi bi-eye-slash toggle-password" id="togglePassword"></i>
+        </div>
+        <div class="error" id="passwordError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-container">
+          <input type="password" id="confirmPassword" placeholder="Confirm password" minlength="6" required>
+          <i class="bi bi-eye-slash toggle-password" id="toggleConfirm"></i>
+        </div>
+        <div class="error" id="confirmError"></div>
+      </div>
+
+      <button type="submit" id="submitBtn">Register Now</button>
+
+      <p class="login-link">
+        Already have an account? <a href="index.html">Login</a>
+      </p>
+    </form>
+  </div>
+
+  <script src="register.js"></script>
+</body>
+</html>

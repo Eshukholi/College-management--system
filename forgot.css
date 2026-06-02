@@ -1,0 +1,144 @@
+/* ======= Reset Defaults ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ======= Body Styling ======= */
+body {
+  background: linear-gradient(135deg, #0078d7, #00b4d8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* ======= Container ======= */
+.forgot-container {
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* ======= Logo ======= */
+.forgot-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* ======= Heading ======= */
+.forgot-container h2 {
+  color: #0078d7;
+  margin-bottom: 0.5rem;
+}
+
+.forgot-container p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ======= Input Field ======= */
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="email"]:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 4px rgba(0, 120, 215, 0.4);
+}
+
+/* ======= I'm not a robot ======= */
+.robot-check {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.robot-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0078d7;
+}
+
+.robot-check label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* ======= Button ======= */
+.btn-reset {
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  background: #005fa3;
+  transform: scale(1.03);
+}
+
+/* ======= Message Styles ======= */
+.success-msg {
+  color: green;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.error-msg {
+  color: red;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* ======= Back Link ======= */
+.back-link {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #0078d7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+/* ======= Animation ======= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

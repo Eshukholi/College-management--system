@@ -1,0 +1,269 @@
+/* ========================
+   GIIT College - B.Tech Page
+   ======================== */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e2a38;
+  color: white;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.brand-text h1 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.brand-text small {
+  font-size: 0.9rem;
+  color: #c0c7d0;
+}
+
+/* Navigation */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00bcd4;
+}
+
+/* Main Section */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bca-program h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1e2a38;
+  margin-bottom: 1rem;
+}
+
+.bca-program p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Section headings */
+.program-section h2 {
+  color: #005f73;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #00bcd4;
+  padding-left: 10px;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+/* Lists */
+.program-section ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.program-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Syllabus section */
+.syllabus {
+  background: #f1f8ff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+.syllabus h2 {
+  margin-bottom: 1rem;
+}
+
+.syllabus ul {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #0077b6;
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  float: right;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #005f73;
+}
+
+/* Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1e2a38;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #2e3b4e;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1e2a38;
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 3px solid #00bcd4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    margin-top: 1rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0.5rem;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .download-btn {
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 1rem auto 0;
+  }
+}
+
+    /* Inline backup styling */
+    .action-buttons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #2c3e50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #34495e;
+    }
+
+    .quick-links {
+      background: #f1f8ff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .quick-links h2 {
+      color: #005f73;
+      margin-bottom: 1rem;
+      border-left: 4px solid #00bcd4;
+      padding-left: 10px;
+      font-size: 1.3rem;
+    }
+
+    .quick-links .links-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .quick-links a {
+      flex: 1 1 180px;
+      text-align: center;
+      background: #0077b6;
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .quick-links a:hover {
+      background: #005f73;
+    }
+
+    footer {
+      text-align: center;
+      background: #1e2a38;
+      color: #ccc;
+      padding: 1rem;
+      margin-top: 3rem;
+      border-top: 3px solid #00bcd4;
+    }

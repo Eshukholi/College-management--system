@@ -1,0 +1,145 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f5f8fc;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.notice-container {
+  background-color: #fff;
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+header .logo {
+  width: 80px;
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  color: #0078d7;
+  margin-bottom: 0.2rem;
+}
+
+header .notice-date {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Notice Content */
+.notice-content h2 {
+  text-align: center;
+  color: #0078d7;
+  margin-bottom: 1rem;
+}
+
+.notice-content p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.notice-content strong {
+  color: #0078d7;
+}
+
+.signature {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #0078d7;
+}
+
+/* Leave a Reply */
+.leave-reply {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #0078d7;
+}
+
+.leave-reply h2 {
+  color: #0078d7;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.leave-reply .form-group {
+  margin-bottom: 1rem;
+}
+
+.leave-reply label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.leave-reply input,
+.leave-reply textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.leave-reply input:focus,
+.leave-reply textarea:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 5px rgba(0,120,215,0.3);
+}
+
+.leave-reply textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.btn-post {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.btn-post:hover {
+  background-color: #005fa3;
+  transform: scale(1.03);
+}
+
+.success-msg {
+  margin-top: 1rem;
+  color: green;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}

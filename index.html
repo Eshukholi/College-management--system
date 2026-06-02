@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-box">
+    <img class="logo" src="logo1.png" alt="GIIT Logo" />
+    <h2>Login</h2>
+
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="user">Full Name</label>
+        <input type="text" id="user" placeholder="Enter full name" required />
+        <div class="error" id="userError"></div>
+      </div>
+
+      <div class="input-group">
+        <label for="emailphone">Email / Phone</label>
+        <input type="text" id="emailphone" placeholder="Enter email or phone" required />
+        <div class="error" id="emailPhoneError"></div>
+      </div>
+
+      <div class="input-group password-wrap">
+        <label for="password">Password</label>
+        <div class="password-field">
+          <input type="password" id="password" placeholder="Enter password" required />
+          <i class="bi bi-eye-slash toggle-icon" id="togglePassword"></i>
+        </div>
+        <div class="error" id="passwordError"></div>
+      </div>
+
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+
+    <a class="create-link" href="register.html">Create an account</a>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

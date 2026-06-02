@@ -1,0 +1,155 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: #f4f8ff;
+  color: #333;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #2c3e50, #3498db);
+  color: white;
+  flex-wrap: wrap;
+}
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+header .brand img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.bca-program h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+.bca-program p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #555;
+  text-align: justify;
+}
+
+/* Programme Details */
+.program-details {
+  background: #eef4ff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.program-details h2 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+.program-details p {
+  margin-bottom: 15px;
+}
+
+/* Syllabus */
+.syllabus {
+  background: #fff5e6;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.syllabus h2 {
+  color: #e67e22;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.syllabus ul {
+  list-style: none;
+  padding-left: 0;
+}
+.syllabus ul li {
+  background: #fff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-left: 5px solid #e67e22;
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+.syllabus ul li:hover {
+  transform: translateX(5px);
+  background: #ffe6cc;
+}
+
+/* Buttons */
+.action-buttons {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.action-buttons .btn {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.action-buttons .btn:hover {
+  background: #2c7edb;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header nav {
+    margin-top: 10px;
+  }
+  .bca-program h1 {
+    font-size: 2rem;
+  }
+}
