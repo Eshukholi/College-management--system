@@ -65,34 +65,7 @@
         <p id="successMsg"></p>
     </form>
 </div>
-
-<script>
-    const form = document.getElementById('admissionForm');
-    const successMsg = document.getElementById('successMsg');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const candidate = {
-        id: document.getElementById('candidateId').value.trim(),
-        name: document.getElementById('name').value.trim(),
-        dob: document.getElementById('dob').value,
-        gender: document.getElementById('gender').value,
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
-        address: document.getElementById('address').value.trim(),
-        course: document.getElementById('course').value,
-        qualification: document.getElementById('qualification').value.trim(),
-        marks: document.getElementById('marks').value
-      };
-
-      localStorage.setItem('admissionData', JSON.stringify(candidate));
-
-      successMsg.textContent = "✅ Form submitted successfully!";
-      successMsg.style.color = "green";
-
-      form.reset();
-    });
+<script scr='Admission.js'>
 </script>
 </body>
 </html>
