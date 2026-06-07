@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Form</title>
+    <link rel="stylesheet" href="Admission.css">
+</head>
+<body>
+<!-- Home Button -->
+  <a href="College.html" class="home-btn">
+    <i class="fas fa-home" aria-hidden="true"></i>
+    Home
+  </a>
+    <div class="container">
+    <h1>College Admission Form</h1>
+
+    <form id="admissionForm">
+        <h2>Personal Details</h2>
+        <label>Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your full name" required>
+
+        <label>Date of Birth:</label>
+        <input type="date" id="dob" required>
+
+        <label>Gender:</label>
+        <select id="gender" required>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+        <h2>Contact Details</h2>
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label>Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+
+        <label>Address:</label>
+        <textarea id="address" placeholder="Enter your address" required></textarea>
+
+        <!-- Academic Details -->
+        <h2>Academic Details</h2>
+        <label>Course Applying For:</label>
+        <select id="course" required>
+            <option value="">Select</option>
+            <option>B.Sc Computer Science</option>
+            <option>B.Com</option>
+            <option>B.A English</option>
+            <option>B.Tech</option>
+            <option>M.Sc</option>
+        </select>
+
+        <label>Previous Qualification:</label>
+        <input type="text" id="qualification" placeholder="Enter last qualification" required>
+
+        <label>Marks Percentage:</label>
+        <input type="number" id="marks" placeholder="Enter percentage" min="0" max="100" required>
+
+        <label for="candidateId">Candidate ID:</label>
+        <input type="text" id="candidateId" placeholder="Enter unique ID" required>
+
+        <button type="submit" class="btn">Submit</button>
+        <p id="successMsg"></p>
+    </form>
+</div>
+<scripts src="Admission.js"></script>
+</body>
+</html>
