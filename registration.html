@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create your account</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --ink:#1B1B18;
+    --paper:#F6F4EF;
+    --card:#FFFFFF;
+    --line:#DEDAD0;
+    --accent:#1F6F5C;
+    --accent-dark:#164F42;
+    --error:#B3402A;
+    --muted:#736F65;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+
+  body{
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(27,27,24,0.055) 1px, transparent 0);
+    background-size: 22px 22px;
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 16px;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:440px;
+  }
+
+  .eyebrow{
+    font-family:'Fraunces', serif;
+    font-size:14px;
+    font-weight:500;
+    color:var(--accent-dark);
+    margin:0 0 6px 2px;
+    letter-spacing:0.01em;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:34px;
+    line-height:1.15;
+    margin:0 0 6px 2px;
+  }
+
+  .sub{
+    margin:0 0 28px 2px;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  form{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 26px 26px;
+  }
+
+  .row{
+    display:flex;
+    gap:12px;
+  }
+
+  .field{
+    margin-bottom:18px;
+    flex:1;
+    min-width:0;
+  }
+
+  label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:6px;
+    color:var(--ink);
+  }
+
+  .hint{
+    font-weight:400;
+    color:var(--muted);
+    font-size:12px;
+    margin-left:4px;
+  }
+
+  input{
+    width:100%;
+    padding:11px 13px;
+    border:1px solid var(--line);
+    border-radius:9px;
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    color:var(--ink);
+    background:#FDFCFA;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+
+  input::placeholder{ color:#B0AB9E; }
+
+  input:focus{
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(31,111,92,0.15);
+  }
+
+  input.invalid{
+    border-color:var(--error);
+  }
+  input.invalid:focus{
+    box-shadow:0 0 0 3px rgba(179,64,42,0.14);
+  }
+
+  .error-msg{
+    font-size:12px;
+    color:var(--error);
+    margin-top:5px;
+    margin-left:2px;
+    display:none;
+  }
+  .error-msg.show{ display:block; }
+
+  .pw-wrap{
+    position:relative;
+  }
+
+  .pw-wrap input{
+    padding-right:42px;
+  }
+
+  .toggle-eye{
+    position:absolute;
+    right:6px;
+    top:50%;
+    transform:translateY(-50%);
+    width:32px;
+    height:32px;
+    border:none;
+    background:transparent;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    color:var(--muted);
+    border-radius:6px;
+  }
+  .toggle-eye:hover{ color:var(--ink); background:rgba(27,27,24,0.05); }
+  .toggle-eye:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; }
+  .toggle-eye svg{ width:19px; height:19px; }
+
+  .strength{
+    height:4px;
+    border-radius:3px;
+    background:var(--line);
+    margin-top:8px;
+    overflow:hidden;
+  }
+  .strength-fill{
+    height:100%;
+    width:0%;
+    background:var(--line);
+    transition:width .2s ease, background-color .2s ease;
+  }
+
+  button.submit{
+    width:100%;
+    margin-top:6px;
+    padding:13px 16px;
+    border:none;
+    border-radius:9px;
+    background:var(--accent);
+    color:#fff;
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background-color .15s ease, transform .05s ease;
+  }
+  button.submit:hover{ background:var(--accent-dark); }
+  button.submit:active{ transform:translateY(1px); }
+  button.submit:focus-visible{ outline:2px solid var(--accent-dark); outline-offset:2px; }
+
+  .success{
+    display:none;
+    text-align:center;
+    padding:40px 26px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+  }
+  .success.show{ display:block; }
+  form.hide{ display:none; }
+
+  .success h2{
+    font-family:'Fraunces', serif;
+    font-size:24px;
+    margin:14px 0 8px;
+  }
+  .success p{
+    color:var(--muted);
+    font-size:14px;
+    margin:0;
+  }
+  .check-circle{
+    width:52px; height:52px;
+    border-radius:50%;
+    background:rgba(31,111,92,0.12);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto;
+  }
+
+  .foot{
+    text-align:center;
+    font-size:13px;
+    color:var(--muted);
+    margin-top:18px;
+  }
+  .foot a{ color:var(--accent-dark); font-weight:600; text-decoration:none; }
+
+  @media (max-width:420px){
+    .row{ flex-direction:column; gap:0; }
+    h1{ font-size:28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <p class="eyebrow">Get started</p>
+  <h1>Create your account</h1>
+  <p class="sub">Fill in your details below — it takes less than a minute.</p>
+
+  <form id="regForm" novalidate>
+    <div class="row">
+      <div class="field">
+        <label for="firstName">First name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Aarav" autocomplete="given-name">
+        <div class="error-msg" id="err-firstName">Enter your first name.</div>
+      </div>
+      <div class="field">
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Sharma" autocomplete="family-name">
+        <div class="error-msg" id="err-lastName">Enter your last name.</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="mobile">Mobile number</label>
+      <input type="tel" id="mobile" name="mobile" placeholder="98765 43210" autocomplete="tel">
+      <div class="error-msg" id="err-mobile">Enter a valid 10-digit mobile number.</div>
+    </div>
+
+    <div class="field">
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+      <div class="error-msg" id="err-email">Enter a valid email address.</div>
+    </div>
+
+    <div class="field">
+      <label for="password">Create password</label>
+      <div class="pw-wrap">
+        <input type="password" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password">
+        <button type="button" class="toggle-eye" data-target="password" aria-label="Show password" aria-pressed="false">
+          <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a20.6 20.6 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 7 11 7a20.6 20.6 0 0 1-3.22 4.36M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+        </button>
+      </div>
+      <div class="strength"><div class="strength-fill" id="strengthFill"></div></div>
+      <div class="error-msg" id="err-password">Password must be at least 8 characters.</div>
+    </div>
+
+    <div class="field">
+      <label for="confirmPassword">Confirm password</label>
+      <div class="pw-wrap">
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password">
+        <button type="button" class="toggle-eye" data-target="confirmPassword" aria-label="Show password" aria-pressed="false">
+          <svg class="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg class="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a20.6 20.6 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 7 11 7a20.6 20.6 0 0 1-3.22 4.36M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+        </button>
+      </div>
+      <div class="error-msg" id="err-confirmPassword">Passwords don't match.</div>
+    </div>
+
+    <button type="submit" class="submit">Create account</button>
+  </form>
+
+  <div class="success" id="successPanel">
+    <div class="check-circle">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F6F5C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2>Account created</h2>
+    <p>Your registration was successful.</p>
+  </div>
+
+  <p class="foot">Already have an account? <a href="#">Log in</a></p>
+</div>
+
+<script>
+  // Password show/hide toggle
+  document.querySelectorAll('.toggle-eye').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      const eyeIcon = btn.querySelector('.icon-eye');
+      const eyeOffIcon = btn.querySelector('.icon-eye-off');
+      const isHidden = input.type === 'password';
+      input.type = isHidden ? 'text' : 'password';
+      eyeIcon.style.display = isHidden ? 'none' : 'block';
+      eyeOffIcon.style.display = isHidden ? 'block' : 'none';
+      btn.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
+      btn.setAttribute('aria-pressed', isHidden ? 'true' : 'false');
+    });
+  });
+
+  // Password strength meter
+  const pwInput = document.getElementById('password');
+  const strengthFill = document.getElementById('strengthFill');
+  pwInput.addEventListener('input', () => {
+    const val = pwInput.value;
+    let score = 0;
+    if (val.length >= 8) score++;
+    if (/[A-Z]/.test(val)) score++;
+    if (/[0-9]/.test(val)) score++;
+    if (/[^A-Za-z0-9]/.test(val)) score++;
+
+    const colors = ['#B3402A', '#C97A2B', '#C9A62B', '#1F6F5C'];
+    const widths = ['25%', '50%', '75%', '100%'];
+    if (val.length === 0) {
+      strengthFill.style.width = '0%';
+      strengthFill.style.background = 'var(--line)';
+    } else {
+      const idx = Math.max(0, score - 1);
+      strengthFill.style.width = widths[idx];
+      strengthFill.style.background = colors[idx];
+    }
+  });
+
+  function showError(id, show) {
+    const input = document.getElementById(id);
+    const err = document.getElementById('err-' + id);
+    input.classList.toggle('invalid', show);
+    err.classList.toggle('show', show);
+  }
+
+  document.getElementById('regForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    let valid = true;
+
+    if (!firstName) { showError('firstName', true); valid = false; } else showError('firstName', false);
+    if (!lastName) { showError('lastName', true); valid = false; } else showError('lastName', false);
+
+    const mobileClean = mobile.replace(/\D/g, '');
+    if (!/^\d{10}$/.test(mobileClean)) { showError('mobile', true); valid = false; } else showError('mobile', false);
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) { showError('email', true); valid = false; } else showError('email', false);
+
+    if (password.length < 8) { showError('password', true); valid = false; } else showError('password', false);
+
+    if (confirmPassword !== password || confirmPassword === '') { showError('confirmPassword', true); valid = false; } else showError('confirmPassword', false);
+
+    if (valid) {
+      document.getElementById('regForm').classList.add('hide');
+      document.getElementById('successPanel').classList.add('show');
+    }
+  });
+</script>
+
+</body>
+</html>
